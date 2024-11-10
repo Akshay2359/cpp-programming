@@ -1,0 +1,994 @@
+Question 1
+User se 4 input lena hai, inka sum nikalna hai. Agar sum > 100 hota hai to ek function call karna hai, jisme 3 input lena hai aur unka average return karna hai. Agar returned average > 50 hai to ek aur function call karke factorial nikalna hai aur check karna hai wo prime number hai ya nahi.
+#include <bits/stdc++.h>
+using namespace std;
+string isPrime(int average){
+    if(average<=1){
+        return" not a prime number";
+    }
+    for(int i=2;i*i<=average;i++){
+        if(average%i==0){
+            return "not a prime number";
+        }
+    }
+    return"prime number";
+}
+void fact( float average){
+    long long fac=1;
+    for(int i=1;i<=average;i++){
+        fac*=i;
+         }
+         cout<<"factorial value is "<<fac<<endl;
+         cout<<isPrime(fac)<<endl;
+    
+}
+int avg(){
+   float e,f,g;
+    cout<<"enter three numbers";
+    cin>>e>>f>>g;
+    float average=(e+f+g)/3;
+    cout<<"average of three numbers are "<<average<<endl;
+    if (average>50){
+        fact(average);
+    }
+    else{
+        cout<<"average is less than 50";
+    }
+return 0;
+}
+int main() {
+    int a,b,c,d;
+    cout<<"enter four numbers"<<endl;
+    cin>>a>>b>>c>>d;
+    int sum=(a+b+c+d);
+    cout<<"sum of four numbers are "<<sum<<endl;
+    if (sum>100){
+        avg();
+    }
+    else{
+        cout<<"sum is less than 100";
+    }
+   
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------
+User se 2 input lena hai, inka product nikalna hai. Agar product < 50 hota hai to ek function call karna hai, jisme product aur ek user input ko add karna hai aur result ko return karna hai. Agar returned value odd hai to ek aur function call karke us value ko square karna hai aur result return karna hai.
+#include <bits/stdc++.h>
+using namespace std;
+void square(int sum){
+    int squ= sum*sum;
+    cout<<squ;
+}
+int neww(int product){
+    int c;
+    int sum=c+product;
+    cout<<sum<<endl;
+    if(sum%2!=0){
+        square(sum);
+    }
+    else{
+        cout<<"sum is even";
+    }
+    return 0;
+}
+
+int main() {
+  int a,b;
+  cout<<"enter two numberes ";
+  cin>>a>>b;
+  int product=a*b;
+  cout<<"product of two numbers are "<<product<<endl;
+  neww(product);
+   return 0;
+} 
+--------------------------------------------------------------------------------
+User se 6 input lena hai, inka maximum nikalna hai. Agar maximum > 75 hota hai to ek function call karna hai, jisme maximum aur 2 user inputs ko subtract karna hai aur result return karna hai. Agar result negative hai to absolute value nikal kar factorial return karna hai.
+#include<bits/stdc++.h>
+using namespace std;
+
+void factorial(int a) {
+    long long fact = 1; 
+    for (int i = 1; i <= a; i++) {
+        fact *= i;
+    }
+    cout << "Factorial Value is: " << fact << endl;
+}
+
+int check(int num){
+    int num1 , num2;
+    cout << "Enter any two numbers : ";
+    cin >> num1 >> num2;
+    
+    return num - num1 - num2;
+}
+
+int main(){
+    
+    int num1 , num2 , num3 , num4 , num5 , num6;
+    cout << "Enter any six  numbers : ";
+    cin >> num1 >> num2 >> num3 >> num4 >> num5 >> num6;
+    
+    int max = num1;
+    
+    if(max < num2){
+        max = num2;
+    }
+    if(max < num3){
+        max = num3;
+    }
+    if(max < num4){
+        max = num4;
+    }
+    if(max < num5){
+        max = num5;
+    }
+    if(max < num6){
+        max = num6;
+    }
+    
+    cout << "Maximum number is : " << max << endl;
+    
+    if(max > 75){
+        
+        int x = check(max);
+        
+        if(x < 0){
+            cout << "Number is negative : " << x << endl;
+            cout << "Absolute value is : " <<abs(x) << endl;
+            
+            factorial(x);
+        }
+        
+        else{
+            cout << "Number is positive : " << x << endl;
+        }
+        
+    }
+    else{
+        cout << "Number is less than 75";
+    }
+     return 0;
+------------------------------------------------------------------------------------------------
+User se 3 input lena hai, inka sum nikalna hai. Agar sum 0 hota hai to ek function call karna hai aur check karna hai ki wo perfect square hai ya nahi. Agar perfect square hai to uska square root nikalna hai aur result return karna hai.
+#include<bits/stdc++.h>
+using namespace std;
+int perfectsquare(int sum){
+    int root = static_cast<int>(sqrt(sum));
+        if (root * root == sum) {
+           cout << sum << " is a perfect square." << endl;
+        } else {
+            cout << sum << " is not a perfect square." << endl;
+        }
+   
+    return 0;
+}
+
+int main(){
+    int a,b,c,sum;
+cout<<"enter three numbers whose sum you want to calculate ";
+cin>>a>>b>>c;
+sum=(a+b+c);
+cout<<"sum of three given numbers are "<<sum<<endl;
+if(sum>0){
+    perfectsquare(sum);
+}
+else{
+    cout<<"sum is lesser than zero";
+}
+    return 0;
+}
+------------------------------------------------------------------------------------------------
+User se 5 input lena hai, inka average nikalna hai. Agar average > 60 hai to ek function call karna hai, jisme 3 input lena hai aur unka product return karna hai. Agar product even hai to uska half return karna hai, agar odd hai to uska double return karna hai.
+#include<bits/stdc++.h>
+using namespace std;
+int prod(){
+    int a,b,c;
+    cout<<"enter three numbers for product ";
+    cin>>a>>b>>c;
+    int pro=a*b*c;
+    cout<<"product of three numbers are "<<pro<<endl;
+    if(pro%2==0){
+        cout<<"half of product is "<<pro/2;
+    }
+    else{
+        cout<<"double of product is "<<pro*2;
+    }
+  return 0;  
+}
+int main(){
+    int n1,n2,n3,n4,n5;
+    cout<<"enter five numbers ";
+    cin>>n1>>n2>>n3>>n4>>n5;
+     float avg=(n1+n2+n3+n4+n5)/5;
+    if(avg>60){
+        cout<<"average is greater than 60 and average is :  "<<avg<<endl;
+        prod();
+    }
+    else{
+        cout<<"product is less than or equal to 60";
+    }
+}
+-----------------------------------------------------------------------------------------------
+User se 4 input lena hai, inka minimum nikalna hai. Agar minimum < 10 hai to ek function call karna hai aur minimum ko 5 se multiply karna hai aur result return karna hai. Agar result > 50 hai to factorial nikalna hai aur result return karna hai.
+#include<bits/stdc++.h>
+using namespace std;
+void mult(int min){
+    int res=min*5;
+    cout<<res<<endl;
+    
+}
+
+int main(){
+    int n1,n2,n3,n4,min;
+    cout<<"enter four numbers ";
+    cin>>n1>>n2>>n3>>n4;
+      min=n1;
+      if(min>n2){
+          min=n2;
+      }
+      else if(min>n3){
+          min=n3;
+      }
+      else if(min>n4){
+          min=n4;
+      }
+      cout<<"minimum of four numbers are "<<min<<endl;
+      if(min<10){
+          mult(min)
+      }
+      else{
+          cout<<"minimum is greater than 10";
+      }
+      return 0;
+}
+------------------------------------------------------------------------------------------------
+User se 3 input lena hai, unka sum nikalna hai. Agar sum > 80 hai to ek function call karna hai, jisme 2 input lena hai aur unka division result return karna hai. Agar result integer hai to us integer ka reverse return karna hai.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int reverse(int n){
+    int rem = 0 , rvs = 0;
+    while(n != 0){
+        rem = n % 10;
+        rvs = rvs * 10 + rem;
+        n /= 10;
+    }
+    return rvs;
+}
+
+float check(){
+    
+    float num1 , num2;
+    cout << "Enter two numbers : ";
+    cin >> num1 >> num2;
+    
+     if (num2 == 0) {
+        cout << "Division by zero is not allowed." << endl;
+        return -1;
+    }
+    
+    return num1 / num2;
+}
+
+
+int main(){
+    
+    int num1 , num2 , num3 ;
+    cout << "Enter any three  numbers : ";
+    cin >> num1 >> num2 >> num3;
+    
+    int sum = num1 + num2 + num3;
+    
+    cout << "Sum is : " << sum << endl;
+    
+    if(sum > 80){
+        
+        float result = check();
+        cout << "Result value is : " << result << endl;
+        
+        if( result == static_cast<int>(result) ){
+            int x = static_cast<int>(result);
+            
+            cout << "Reverse of result is : " << reverse(x) << endl;
+            
+        }
+        else{
+            cout << "Result is not an integer value" << endl;
+        }
+        
+    }
+    
+    else{
+        cout << "Sum is less than 80";
+    }
+    
+   
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+User se 2 input lena hai, inka difference nikalna hai. Agar difference < 0 hai to absolute value return karna hai. Agar difference even hai to ek function call karna hai aur us value ka cube return karna hai.
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int cube(int x){
+    return x * x * x;
+}
+
+int main(){
+    
+    int num1 , num2;
+    cout << "Enter any two  numbers : ";
+    cin >> num1 >> num2;
+    
+    int diff = num1 - num2;
+    cout << "Difference between two numbers are : " << diff << endl;
+    
+    int absolute;
+    
+    if(diff < 0){
+        absolute = abs(diff);
+        cout << "Absolute value is : " << absolute << endl;
+    }
+    if(absolute % 2 == 0){
+        
+        cout << "Cube of value is : " << cube(absolute);
+        
+    }
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+User se 4 input lena hai, inka product nikalna hai. Agar product > 1000 hai to ek function call karna hai, jisme product aur ek user input ko divide karna hai aur result return karna hai. Agar result fraction hai to uska ceiling value return karna hai.
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+float check(int pro){
+    float num;
+    cout << "Enter any number : ";
+    cin >> num;
+    
+    float result = float(pro) / num;
+    
+    return ceil(result);
+}
+
+int main(){
+    
+    int num1 , num2 ,  num3 , num4 ;
+    cout << "Enter any four  numbers : ";
+    cin >> num1 >> num2 >> num3 >> num4;
+    
+    int pro = num1 * num2 * num3 * num4;
+    
+    cout << "Product is : " << pro << endl;
+    
+    if(pro > 1000){
+        cout << "Result is : " << check(pro) << endl;
+        
+    }
+    else{
+        cout << "Product is less than 1000";
+    }
+    
+    
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+User se 3 input lena hai, inka average nikalna hai. Agar average < 25 hai to ek function call karna hai aur check karna hai ki wo prime number hai ya nahi. Agar prime hai to uska factorial return karna hai.
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int factorial(int num){
+    int fact = 1;
+    for(int i=1 ; i<=num ; i++){
+        fact *= i;
+    }
+    return fact;
+}
+
+bool isprime(int x){
+    if(x <= 1){
+        return false;
+    }
+    
+    for(int i=2 ; i*i <= x ; i++){
+        if(x % i == 0){
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+
+int main(){
+    
+    int num1 , num2 ,  num3;
+    cout << "Enter any three  numbers : ";
+    cin >> num1 >> num2 >> num3 ;
+    
+    float sum = num1 + num2 + num3;
+    
+    float avg = sum / 3.0;
+    
+    if(avg < 25){
+        
+        int avgint = static_cast<int>(avg);
+        
+        if( isprime(avgint) ){
+            
+            cout << "Prime number" << endl;
+            
+            int fact = factorial(avgint);
+            cout << "Factorial value is : " << fact << endl;
+        }
+        else{
+            cout << "Not an prime number" << endl;
+        }
+    }
+    
+    else{
+        cout << "Average is greater than 25";
+    }
+    
+
+    
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+User se 5 input lena hai, inka maximum nikalna hai. Agar maximum > 90 hota hai to ek function call karna hai, jisme maximum aur ek user input ko subtract karna hai aur result return karna hai. Agar result positive hai to us value ka cube return karna hai.
+
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int sub(int maxi){
+    int num;
+    cout << "enter any number : ";
+    cin >> num;
+    
+    int result = maxi - num;
+    
+    if(result > 0){
+        return result * result * result;
+    }
+    return result;
+}
+
+int main(){
+    
+    int num[5];
+    cout << "Enter any five numbers : ";
+    
+    int maxi = INT_MIN;
+    
+    for(int i=0 ; i<5 ; i++){
+        cin >> num[i];
+        
+        maxi = max(num[i],maxi);
+    }
+    
+    cout << "Maximum number is : " << maxi << endl;
+    
+    if(maxi > 90){
+        int result = sub(maxi);
+        cout << result;
+    }
+    
+    else{
+        cout << "Number is less than 90";
+    }
+    
+    
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+User se 4 input lena hai, inka sum nikalna hai. Agar sum < 50 hai to ek function call karna hai aur sum ka reverse nikalna hai aur result return karna hai. Agar reverse value even hai to uska half return karna hai.
+
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int reverse(int num){
+    int rem = 0 , reverse = 0;
+    while(num != 0){
+        rem = num % 10;
+        reverse = reverse * 10 + rem;
+        num /= 10;
+    }
+    return reverse;
+}
+
+int main(){
+    
+    int num[4];
+    cout << "Enter any four numbers : ";
+    
+    int sum = 0;
+    
+    for(int i=0 ; i<4 ; i++){
+        cin >> num[i];
+        
+        sum += num[i];
+    }
+    
+    cout << "Sum of number is : " << sum << endl;
+    
+    if(sum < 50){
+        int rvs = reverse(sum);
+        cout << "Reverse Value is : " << rvs << endl;
+        
+        if(rvs % 2 == 0){
+            cout << "Even number and half of it is : " << rvs / 2;
+        }
+        else{
+            cout << "Odd number";
+        }
+    }
+    
+    else{
+        cout << "Sum is greater than 50";
+    }
+    
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+User se 3 input lena hai, inka average nikalna hai. Agar average > 40 hai to ek function call karna hai, jisme 2 input lena hai aur unka product return karna hai. Agar product negative hai to absolute value return karna hai.
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int product(){
+    int num1 , num2;
+    cout << "Enter any two  numbers : ";
+    cin >> num1 >> num2;
+    
+    return num1 * num2;
+}
+
+
+int main(){
+    
+    int num[3];
+    cout << "Enter any three numbers : ";
+    
+    int sum = 0;
+    
+    for(int i=0 ; i<3 ; i++){
+        cin >> num[i];
+        
+        sum += num[i];
+    }
+    
+    float avg = sum / 3.0;
+    
+    cout << "Avearge of number is : " << avg << endl;
+    
+    if(avg > 40){
+        int pro = product();
+        cout << "Product value is : " << pro << endl;
+        
+        if(pro < 0){
+            cout << "Absolute value is : " << abs(pro);
+        }
+    }
+    
+    else{
+        cout << "Number is less than 40";
+    }
+    
+  
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+User se 2 input lena hai, inka maximum nikalna hai. Agar maximum > 30 hai to ek function call karna hai aur check karna hai wo prime hai ya nahi. Agar prime hai to factorial return karna hai.
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int factorial(int num){
+    int fact = 1;
+    for(int i=1 ; i<=num ; i++){
+        fact *= i;
+    }
+    return fact;
+}
+
+bool isprime(int num){
+    if(num <= 1){
+        return false;
+    }
+    
+    for(int i=2 ; i*i <= num ; i++){
+        if(num % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+int main(){
+    
+    int num[2];
+    cout << "Enter any two numbers : ";
+    
+    int maxi = INT_MAX;
+    
+    for(int i=0 ; i<3 ; i++){
+        cin >> num[i];
+        
+        maxi = max(num[i],maxi);
+    }
+    
+    cout << "Maximum number is : " << maxi << endl;
+    
+    if(maxi > 30){
+        
+        if( isprime(maxi) ){
+            cout << "Prime number" << endl ;
+            cout << "and their Factorial is :  " << factorial(maxi);
+            
+        }
+        else{
+            cout << "Not a Prime number";
+        }
+    }
+    
+    else{
+        cout << "Number is less than 30";
+    }
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+User se 4 input lena hai, inka sum nikalna hai. Agar sum > 150 hai to ek function call karna hai, jisme 3 input lena hai aur unka sum return karna hai. Agar returned sum even hai to factorial nikalna hai aur result return karna hai.
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int factorial(int num){
+    int fact = 1;
+    for(int i=1 ; i<=num ; i++){
+        fact *= i;
+    }
+    return fact;
+}
+
+int check(){
+     int num[3];
+    cout << "Enter any four numbers : ";
+    
+    int sum = 0;
+    
+    for(int i=0 ; i<3 ; i++){
+        cin >> num[i];
+        
+        sum += num[i];
+    }
+    return sum;
+}
+
+int main(){
+    
+    int num[4];
+    cout << "Enter any four numbers : ";
+    
+    int sum = 0;
+    
+    for(int i=0 ; i<4 ; i++){
+        cin >> num[i];
+        
+        sum += num[i];
+    }
+    
+    cout << "Sum of number is : " << sum << endl;
+    
+   if(sum > 150){
+       int result = check();
+       cout << "Sum : " << result;
+       
+       if(result % 2 == 0){
+           cout << "Even number";
+           cout << "Factorial is : " << factorial(result);
+       }
+       else{
+           cout << "Odd number";
+       }
+       
+    }
+    
+    else{
+        cout << "Sum is less than 150";
+    }
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+User se 2 input lena hai, inka product nikalna hai. Agar product < 20 hai to ek function call karna hai aur product ko 5 se add karna hai aur result return karna hai.
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int add(int x){
+    return x + 5;
+}
+
+int main(){
+    
+    int num[2];
+    cout << "Enter any four numbers : ";
+    
+    int pro = 1;
+    
+    for(int i=0 ; i<2 ; i++){
+        cin >> num[i];
+        
+        pro *= num[i];
+    }
+    
+    cout << "Product of number is : " << pro << endl;
+    
+    if(pro < 20){
+        cout << "Value of product after adding 5 in it is : " << add(pro);
+    }
+    else{
+        cout << "Product is greater than 20";
+    }
+    
+   
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+User se 6 input lena hai, inka average nikalna hai. Agar average > 70 hai to ek function call karna hai, jisme 4 input lena hai aur unka maximum return karna hai. Agar maximum > 50 hai to uska cube return karna hai.
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int maximum(){
+    int num[4];
+    cout << "Enter any four numbers : ";
+    
+    int maxi = INT_MIN;
+    
+    for(int i=0 ; i<4 ; i++){
+        cin >> num[i];
+        
+        maxi = max(num[i],maxi);
+    }
+    
+    return maxi;
+}
+int main(){
+    
+    int num[6];
+    cout << "Enter any six numbers : ";
+    
+    int sum = 0;
+    
+    for(int i=0 ; i<6 ; i++){
+        cin >> num[i];
+        
+        sum += num[i];
+    }
+    
+    float avg = sum / 6.0;
+    cout << "average is : " << avg << endl;
+    
+    if(avg > 70){
+        int max = maximum();
+        cout << "Maximum number is : " << max << endl;
+         
+        if(max > 50){
+            cout << "Cube of maximum number is : " << max * max * max;
+        } 
+    }
+    
+    else{
+        cout << "Number is less than 70";
+    }
+   
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+User se 3 input lena hai, inka sum nikalna hai. Agar sum < 30 hai to ek function call karna hai aur sum ko 10 se multiply karna hai aur result return karna hai.
+
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int multi(int x){
+    return x * 10;
+}
+
+int main(){
+    
+    int num[3];
+    cout << "Enter any three numbers : ";
+    
+    int sum = 0;
+    
+    for(int i=0 ; i<3 ; i++){
+        cin >> num[i];
+        
+        sum += num[i];
+    }
+    
+    cout << "Sum is : " << sum << endl;
+    
+    if(sum < 30){
+        cout << "Total value of sum after multiplying it by 10 is : " << multi(sum);
+    }
+    else{
+        cout << "Sum is greater than 30";
+    }
+    
+   
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+User se 5 input lena hai, inka product nikalna hai. Agar product > 500 hai to ek function call karna hai, jisme product aur ek user input ko divide karna hai aur result return karna hai. Agar result integer hai to factorial nikalna hai aur result return karna hai.
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+int factorial(int num){
+   long long int fact = 1;
+    for(int i=1 ; i<=num ;i++){
+        fact *= i;
+    }
+    return fact;
+}
+
+float multi(int x){
+    float num;
+    cout << "enter any number : ";
+    cin >> num;
+   
+    return static_cast<float>(x) / num;
+}
+
+int main(){
+    
+    int num[5];
+    cout << "Enter any three numbers : ";
+    
+    int pro = 1;
+    
+    for(int i=0 ; i<5 ; i++){
+        cin >> num[i];
+        
+        pro *= num[i];
+    }
+    
+    cout << "Product of numbers is : " << pro << endl;
+    
+    if(pro > 500){
+        
+        float result = multi(pro);
+        cout << "Result is : " << result << endl;
+        
+        if(result == static_cast<int>(result) ){
+            cout << "Integer and factorial is : " <<
+            factorial( static_cast<int>(result) );
+        }
+        else{
+            cout << "Not an integer number";
+        }
+        
+    }
+    
+    else{
+        cout << "Product is less than 500";
+    }
+   
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+User se 4 input lena hai, inka maximum nikalna hai. Agar maximum > 20 hai to ek function call karna hai aur check karna hai wo prime hai ya nahi. Agar prime hai to uska double return karna hai.
+
+
+
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+
+bool isprime(int n){
+    if(n <= 1){
+        return false;
+    }
+    for(int i=2 ; i*i <= n ; i++){
+        if(n % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+int main(){
+    
+    int num[4];
+    cout << "Enter any four numbers : ";
+    
+    int maxi = INT_MIN;
+    
+    for(int i=0 ; i<4 ; i++){
+        cin >> num[i];
+        
+       maxi = max(num[i] , maxi);
+    }
+    
+    cout << "Maximum numbers is : " << maxi << endl;
+    
+    if(maxi > 20){
+        if( isprime(maxi) ){
+            cout << "Prime Number" << endl;
+            cout << "Double of it is : " << maxi * maxi ;
+        }
+        else{
+            cout << "Not an prime number" << endl;
+        }
+    }
+    
+   
+    return 0;
+}
+
