@@ -1,0 +1,228 @@
+Two routes are available for a road trip:
+Route A is d1 km long with an average speed of s1 km/h.
+Route B is d2 km long with an average speed of s2 km/h.
+Calculate the time taken for both routes.
+If Route A is faster, recommend "Take Route A"; if Route B is faster, recommend "Take Route B"; if both are the same, recommend "Choose Any Route."
+Determine the optimal route based on calculated travel times.
+#include <iostream>
+using namespace std;
+void route(){
+  int d1,s1;
+cout<<"Route A is d1 km long with an average speed of s1 km/h. provide value of d1 and s1"<<endl;
+cin>>d1>>s1;
+int t1=d1/s1;
+cout<<"time taken from route 1 is "<<t1<<endl;
+int d2,s2;
+cout<<"Route B is d2 km long with an average speed of s2 km/h. provide value of d2 and s2"<<endl;
+cin>>d2>>s2;
+int t2=d2/s2;
+cout<<"time taken from route 2 is "<<t2<<endl;
+if(t1>t2){
+    cout<<"route B is better";
+    
+}
+else if(t2>t1){
+    cout<<"route A is better";
+}
+else{
+    cout<<"both route are same";
+}
+
+}
+int main() {
+    cout<<"we have to find faster route"<<endl;
+    route();
+
+    return 0;
+}
+-------------------------------------------------------------
+You have ₹X and want to exchange it for USD.
+The exchange rate is ₹83 per USD.
+Calculate the number of USD you will receive.
+If the amount received in USD is less than $50, print "Insufficient funds."
+If it’s between $50 and $100, print "Moderate exchange."
+If it’s above $100, print "High exchange."
+Determine the category of the exchange based on the amount received in USD.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+double exchange(double inr , double exrate){
+    
+    return inr / exrate;
+}
+
+int main(){
+    
+    double inr;
+    cout << "Enter total amount in INR : ";
+    cin >> inr;
+    
+    double exrate = 83;
+    
+    double USD = exchange(inr,exrate);
+    cout << "Amount in USD : " << USD << "$" << endl;
+    
+    if(USD < 50){
+        cout << "Insufficient funds";
+    }
+    else if(USD > 50 && USD < 100){
+        cout << "Moderate exchange";
+    }
+    else{
+        cout << "High exchange";
+    }
+    return 0;
+    
+}
+
+
+--------------------------------------------------------------------------------------------------------------
+
+A car consumes x liters of fuel to travel d kilometers.
+Calculate the fuel efficiency in km per liter: Efficiency=d/x​.
+If the efficiency is greater than 15 km/l, classify it as "High Efficiency."
+If it is between 10 and 15 km/l, classify it as "Moderate Efficiency."
+If it is less than 10 km/l, classify it as "Low Efficiency."
+Determine the fuel efficiency category.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+double check(double fuel , double distance){
+    
+    return distance / fuel;
+}
+
+int main(){
+    
+    double fuel , distance;
+    
+    cout << "Enter total distance travel (in km) : ";
+    cin >> distance;
+    
+    cout << "Enter total fuel consumed (in litres) : ";
+    cin >> fuel;
+    
+    double eff = check(fuel,distance);
+    cout << "Efficiency : " << eff << endl;
+    
+    if(eff < 10){
+        cout << "Low efficiency";
+    }
+    else if(eff >= 10 && eff < 15){
+        cout << "Moderate efficiency";
+    }
+    else{
+        cout << "High efficiency";
+    }
+    
+    
+    return 0;
+    
+}
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+A factory produces N units of a product with a production cost of ₹50 per unit.
+The selling price per unit is ₹80.
+If the total production cost exceeds ₹2000, reduce the selling price by 10%.
+Calculate the profit and determine if it’s a "Profitable Sale" (profit > ₹1000) or "Low Profit" (profit ≤ ₹1000).
+Calculate the profit and classify it based on the conditions.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+double profit(int n , double pcost , double sprice){
+    double x = n * sprice;
+    return x - pcost;
+}
+
+double sellingprice(double pcost){
+    double sprice = 80;
+    if(pcost > 2000){
+        sprice *= 0.9;
+    }
+    return sprice;
+}
+
+int main(){
+    
+    int n;
+    cout << "Enter total number of products : ";
+    cin >> n;
+    
+    double pcost = n * 50;
+    
+    double sprice = sellingprice(pcost);
+    
+    double pro = profit(n , pcost , sprice);
+    cout << "Total Profit generate : " << pro << " ₹" <<endl;
+    
+    if(pro <= 1000){
+        cout << "Low Profit";
+    }
+    else{
+        cout << "Profitable sale";
+    }
+    
+    return 0;
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------
+
+A store has currentStock units of a product, and the reorder level is reorderLevel.
+If the current stock is less than half the reorder level, place an "Urgent Restock" order.
+If it’s between half and the reorder level, place a "Standard Restock" order.
+If it’s above the reorder level, print "Stock is sufficient."
+Determine the restocking decision based on current stock levels.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void check(double cr , double reorderlvl){
+    
+    if(cr < reorderlvl/2 ){
+        cout << "Urgent Restock";
+    }
+    else if(cr >= reorderlvl/2 && cr < reorderlvl){
+        cout << "Standard Restock";
+    }
+    else{
+        cout << "Stock is sufficient";
+    }
+}
+
+double sellingprice(double pcost){
+    double sprice = 80;
+    if(pcost > 2000){
+        sprice *= 0.9;
+    }
+    return sprice;
+}
+
+int main(){
+    
+    double current , reorderlevel;
+    
+    cout << "Enter current stock : ";
+    cin >> current;
+    
+    cout << "Enter reorder level : ";
+    cin >> reorderlevel;
+    
+    check(current , reorderlevel);
+    
+    return 0;
+}
