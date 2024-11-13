@@ -1,0 +1,227 @@
+You have a temperature in Celsius, tempC.
+Convert it to Fahrenheit using the formula:
+tempF=(9/5​×tempC)+32
+If the temperature in Fahrenheit is below 60°F, print "Cold Weather."
+If it’s between 60°F and 85°F, print "Comfortable Weather."
+If it’s above 85°F, print "Hot Weather."
+Determine the comfort level based on the converted temperature.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void check(float tempF){
+    
+    if(tempF < 60){
+        cout << "Cold Weather";
+    }
+    else if(tempF > 60 && tempF < 85){
+        cout << "Comfortable Weather";
+    }
+    else{
+        cout << "Hot Weather";
+    }
+    
+}
+
+int main(){
+    
+    float tempC;
+    cout << "Enter Temperature in celsius : ";
+    cin >> tempC;
+    
+    float tempF = (9/5 * tempC) + 32;
+    cout << "Temperatue in Fahrenheit is : " << tempF << " F" << endl;
+    
+    check(tempF);
+    
+    return 0;
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+The ticket price for a movie is ₹150.
+If the person’s age, age, is below 12 years, apply a 50% discount.
+If the age is between 12 and 60, charge the full price.
+If the age is above 60, apply a 20% discount.
+Calculate the final ticket price and classify it as "Child Ticket," "Adult Ticket," or "Senior Ticket" based on the age category.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void check(int age , float price){
+    
+    float finalP;
+    
+    if(age < 12){
+        finalP = price * 0.5; 
+        cout << "Child Ticket" << endl;
+    }
+    else if(age > 12 && age < 60){
+        finalP = price;
+        cout << "Adult Ticket" << endl;
+    }
+    else{
+        finalP = price * 0.8;
+        cout << "Senior Ticket" << endl;
+    }
+    
+    cout << "Final Ticket Price is : " << finalP;
+    
+}
+
+int main(){
+    
+    int age;
+    cout << "Eter your age : ";
+    cin >> age;
+    
+    float price = 150.0;
+    
+    check(age , price);
+    
+    return 0;
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+A household uses units of electricity.
+The pricing scheme is as follows:
+Up to 100 units: ₹5 per unit
+From 101 to 300 units: ₹7 per unit
+Above 300 units: ₹10 per unit
+Calculate the total bill and classify the bill as "Low Usage" (bill < ₹1000), "Moderate Usage" (₹1000 ≤ bill ≤ ₹3000), or "High Usage" (bill > ₹3000).
+Determine the bill category based on the calculated total.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void check(float bill){
+    if(bill < 1000){
+        cout << "Low Usage";
+    }
+    else if(bill >= 1000 && bill <= 3000){
+        cout << "Moderate Usage";
+    }
+    else{
+        cout << "High Usage";
+    }
+}
+
+void calculate(int unit , float bill){
+    
+    if(unit <= 100){
+        bill = unit * 5;
+    }
+    else if(unit > 100 && unit <= 300){
+        bill = (100 * 5) + (unit - 100) * 7;
+    }
+    else{
+        bill = (100 * 5) + (200 * 7) + (unit - 300) * 10;
+    }
+    cout << "Total Bill : " << bill << "₹" << endl;
+    
+    check(bill);
+}
+
+int main(){
+    
+    int unit;
+    cout << "Enter total units : ";
+    cin >> unit;
+    
+    float bill;
+    
+    calculate(unit , bill);
+    
+    return 0;
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+You want to apply for a loan amount of ₹loanAmount with a monthly income of ₹monthlyIncome.
+The bank allows a loan only if the monthly EMI is less than 50% of the monthly income.
+Assume the EMI is calculated as EMI=loanAmount​/12.
+If the EMI is less than 50% of the income, print "Loan Approved"; otherwise, print "Loan Rejected."
+Determine the eligibility for the loan based on the income and loan amount.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void calculate(float loanAmount , float income , float emi){
+    float x = income * 0.5;
+    
+    if(emi < x){
+        cout << "Loan Approved";
+    }
+    else{
+        cout << "Loan Rejected";
+    }
+}
+
+int main(){
+    
+    float loanAmount , income , emi;
+    cout << "Enter Loan Amount : ";
+    cin >> loanAmount;
+    
+    cout << "Enter Monthly Income : ";
+    cin >> income;
+    
+    emi = loanAmount / 12;
+    
+    calculate(loanAmount , income , emi);
+    
+    return 0;
+}
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+You are considering three data plans:
+Plan A: 1GB per day for ₹200 per month
+Plan B: 1.5GB per day for ₹250 per month
+Plan C: 2GB per day for ₹300 per month
+If your daily data usage is usageGB GB:
+Recommend "Plan A" if usage is less than 1GB/day
+Recommend "Plan B" if usage is between 1GB and 1.5GB/day
+Recommend "Plan C" if usage is above 1.5GB/day
+Suggest the most suitable plan based on the user’s daily usage.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void check(float usage){
+    
+    if(usage <= 1){
+        cout << "Recommended Plan" << endl;
+        cout << "Plan A : 1GB per day for ₹200 per month";
+    }
+    else if(usage > 1 && usage <= 1.5){
+        cout << "Recommended Plan" << endl;
+        cout << "Plan B : 1.5GB per day for ₹250 per month";
+    }
+    else{
+        cout << "Recommended Plan" << endl;
+        cout << "Plan C : 2GB per day for ₹300 per month";
+    }
+}
+
+int main(){
+    
+    float usage;
+    cout << "Enter your daily data usage (in GB) : ";
+    cin >> usage;
+    
+    check(usage);
+
+    return 0;
+}
