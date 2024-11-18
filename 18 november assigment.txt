@@ -1,0 +1,130 @@
+1. 1 1 2 3 5 8 13 .....
+    a=1 b=1 c =a+b 
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a=1,b=1,c;
+    cout<<a<<" "<<b<<" ";
+   
+    for(int i=2;i<8;i++){
+         c=a+b;
+    cout<<c<<" ";
+   a=b;
+   b=c;
+    }
+    }
+--------------------------------------------------------------------------------------------
+2. 1 2 2 4 8 32 ....
+   a=1 b=2 c =a*b
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a=1,b=2,c;
+    cout<<a<<" "<<b<<" ";
+     for(int i =2;i<9;i++){
+    c=a*b;
+    cout<<c<<" ";
+    a=b;
+    b=c;
+     }
+}
+-------------------------------------------------------------------------------------------------
+3. 1 2 3 6 11 20 ....
+     a=1 b=2 c=3  d =a+b+c
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a=1,b=2,c=3,d;
+    cout<<a<<" "<<b<<" "<<c<<" ";
+     for(int i =2;i<9;i++){
+    d=a+b+c;
+    cout<<d<<" ";
+    a=b;
+    b=c;
+    c=d;
+     }
+}
+--------------------------------------------------------------------------------------------------
+4. 1 2 4 8 32 ....
+     a=1 b=2 c= power of 2
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+ int a=1,b=2;
+ cout<<a<<" "<<b<<" ";
+ int c=4;
+ for(int i=3;i<8;i++){
+    cout<<c<<" ";
+     c*=2;
+ }
+return 0;
+}
+-----------------------------------------------------------------------------------------------------
+5. 1 2 3 6 18 .....
+     a =1 b=2 c=3 d =c*b 
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+ int a=1,b=2,c=3,d;
+ cout<<a<<" "<<b<<" "<<c<<" ";
+ for(int i=1;i<8;i++){
+ d=c*b;
+ cout<<d<<" ";
+ b=c;
+ c=d;
+ }
+return 0;
+}
+--------------------------------------------------------------------------------------------------------
+6. there are four variables a = 1 b= 2 c= 3 c=4
+   formulate  1 2 3 4 5 7 9 12 16  and so on
+#include <bits/stdc++.h>
+ using namespace std;
+ int main() {
+ int a=1,b=2,c=3,d=4,e;
+ cout<<a<<" "<<b<<" "<<c<<" "<<d<<" ";
+ for(int i=1;i<8;i++){
+     e=b+c;
+     cout<<e<<" ";
+a=b;
+b=c;
+c=d;
+d=e;
+}
+return 0;
+}
+---------------------------------------------------------------------------------------------------------
+7.1 2 4 7 12 20...
+Variables: a=1, b=2, c=a+b+1
+Formula: The additon between consecutive terms increases by 1.
+ #include <bits/stdc++.h>
+ using namespace std;
+ int main() {
+ int a=1,b=2,c;
+ cout<<a<<" "<<b<<" ";
+ for(int i=0;i<8;i++){
+     c=(a+b)+1;
+    cout<<c<<" ";
+     a=b;
+     b=c;
+}
+return 0;
+}
+-----------------------------------------------------------------------------------------------------
+8.Modified Tribonacci Sequence
+Sequence: 1, 1, 2, 4, 7, 13, ...
+Formulation: a = 1, b = 1, c = 2, d = a + b + c
+DP Problem: Solve for the nth term where each term is the sum of the previous three terms.
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a=1,b=1,c=2,d;
+    cout<<a<<" "<<b<<" "<<c<<" ";
+     for(int i=0;i<9;i++){
+    d=a+b+c;
+    cout<<d<<" ";
+    a=b;
+    b=c;
+    c=d;
+     }
+}
